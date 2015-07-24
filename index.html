@@ -2,22 +2,38 @@
 <!-- Unsure if king meme is banned? You've come to the right place -->
 <html>
   <head>
-    <title> Is Kratos Banned? </title>
+    <title>Is Kratos Banned?</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 64px;
+        font-family: sans-serif;
+      }
+      h2 {
+        text-align: center;
+        font-size: 32px;
+        font-family: sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <h1> YES </h1>
-    <h2>Number of days since last ban: 0</h2>
-    <style>
-    h1 {
-      text-align: center;
-      font-size: 64px;
-      font-family: sans-serif;
-    }
-    h2 {
-      text-align: center;
-      font-size: 32px;
-      font-family: sans-serif;
-    }
-    </style>
+    <h1 id="is-banned"></h1>
+    <h2 id="days-since"></h2>
+    
+    <script>
+      var isBanned = true, dateOfBan = new Date('2015-07-24T03:24:36Z');
+      window.addEventListener('load', function () {
+        var isBannedElement = document.getElementById('is-banned');
+        var daysSinceElement = document.getElementById('days-since');
+        
+        if (isBanned) {
+          isBannedElement.textContent = 'YES';
+          daysSinceElement.textContent = 'Number of days since last ban: ' + Math.round(Math.abs((+new Date()) - (+dateOfBan))/8.64e7);
+        } else {
+          isBannedElement.textContent = 'NO';
+          document.removeChild(daysSinceElement);
+        }
+      });
+    </script>
   </body>
 </html>
