@@ -1,0 +1,2 @@
+# iskratosbanned.github.io
+yes
